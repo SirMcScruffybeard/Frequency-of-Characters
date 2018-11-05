@@ -8,20 +8,26 @@ public class FerquencyOfCharacters {
 		
 		int frequencyArray[] = new int[string.length()]; 
 		
-		char stringArray[] = string.toCharArray();
+		char stringArray[] = string.toCharArray(); //Array of characters
 		
+		
+		int i, j;
 		
 		//Count characters
 		
-		for (int i = 0; i < string.length(); i++) {
+		for (i = 0; i < string.length(); i++) {
 			
 			frequencyArray[i] = 1;
 			
-			for(int j = i + 1; j < string.length(); j++) {
+			for(j = i + 1; j < string.length(); j++) {
 				
-				if(stringArray[i] == stringArray[j]) frequencyArray[i]++;
+				if(stringArray[i] == stringArray[j]) {
+					
+					frequencyArray[i]++;
 				
 				stringArray[j] = '0'; //To avoid revisiting a character
+				
+				} //if equal
 				
 			}// For j
 			
@@ -32,7 +38,7 @@ public class FerquencyOfCharacters {
 		
 		System.out.println("Characters and their corresponding frequencies");
 		
-		for (int i = 0; i < frequencyArray.length; i++) {
+		for (i = 0; i < frequencyArray.length; i++) {
 			
 			if (stringArray[i] != ' ' && stringArray[i] != '0') {
 				
